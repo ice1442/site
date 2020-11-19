@@ -2,7 +2,7 @@ hello{
     text-size-adjust: 100;
 }
 html{
-    background-color: #00032d;
+    background-image:url('300.gif'); background-repeat:repeat;
 }
 body{
     color: #6067c1;
@@ -10,3 +10,21 @@ body{
     text-align: center;
     text-shadow: 1px 
 }
+.glow {
+    font-size: 80px;
+    color: #6067c1;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #149414, 0 0 40px #149414, 0 0 50px#149414, 0 0 60px #149414, 0 0 70px #149414;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #149414, 0 0 40px #149414, 0 0 50px #149414, 0 0 60px #149414, 0 0 70px #149414, 0 0 80px #ff4da6;
+    }
+  }
