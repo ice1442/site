@@ -1,0 +1,15 @@
+hello{
+    text-size-adjust: 100;
+}
+html{
+    background-image:url('300.gif'); background-repeat:repeat;
+}
+body{
+    color: #6067c1;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    text-shadow: 1px 
+}
+h1 {
+    text-align: center;
+}
