@@ -31,15 +31,6 @@ button.addEventListener("click", function(){
     if (name == "" ){
         alert("please enter name");
     }
-
-    else {
-        var data = {
-            name: name,
-        }
-        var database = firebase.database();
-        var ref = database.ref("records");
-        ref.push(data);
-    }
 })
 
 function preload(){
@@ -94,6 +85,12 @@ function draw() {
             for(let e of enms){
                 if (distance(e) < 50){
                     alert(" game over \n score : " + x + "\n press space to restart ");
+                    var data = {
+                        name: name,
+                    }
+                    var database = firebase.database();
+                    var ref = database.ref("records");
+                    ref.push(data);
                     start = false;
                     x = 0
                     for(let e of enms){
