@@ -21,6 +21,7 @@ firebase.initializeApp(firebaseConfig);
 function swap(){
     c = false;
 }
+
 let button = document.getElementById("button");
 
 button.addEventListener("click", function(){
@@ -52,7 +53,6 @@ function setup() {
     for (var i = 0;i < 3;i++){
       enms.push (new Enm(i+1));
     }
-    alert("press space to start");
 }
 
 function keyPressed(){
@@ -76,7 +76,6 @@ function draw() {
             b += 1
         }
         a += b;
-        createCanvas(window.innerWidth, window.innerHeight);
         background(a,a,a);
         var x = 0;
         if(key == ' '){
