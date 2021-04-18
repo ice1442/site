@@ -25,7 +25,7 @@ function swap(){
 let button = document.getElementById("button");
 
 button.addEventListener("click", function(){
-    var names = document.getElementById("names").value;
+    names = document.getElementById("names").value;
 
     if (names == "" ){
         alert("please enter name");
