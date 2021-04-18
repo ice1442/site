@@ -95,9 +95,9 @@ function draw() {
                     alert(" game over \n score : " + x + "\n press space to restart ");
 
                     ref.on('value',function(snapshot){
-                        consol.log(document.getElementById(names).value= snapshot.val().data)
+                        values = (document.getElementById(names).value= snapshot.val().data)
                     })
-
+                    console.log(values)
                     c = true;
                     start = false;
                     x = 0;
