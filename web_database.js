@@ -91,7 +91,13 @@ function draw() {
                     }
                     var ref = firebase.database().ref('records/');
                     ref.push(data);
-
+                    namep.on("value", function(snapshot) {
+                        console.log(snapshot.val());
+                        var name = snapshot.val();
+                        age = name.age;
+                        number = name.number;
+                        realname = snapshot.key;
+                    });
                     alert(" game over \n score : " + x + "\n press space to restart ");
                     console.log(snapshot.val());
                     c = true;
