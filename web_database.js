@@ -88,10 +88,11 @@ function draw() {
                         name: names,
                         score: x,
                     }
-                    alert(" game over \n score : " + x + "\n press space to restart ");
                     var database = firebase.database();
                     var ref = database.ref("records");
                     ref.push(data);
+                    alert(" game over \n score : " + x + "\n press space to restart ");
+                    
                     start = false;
                     x = 0
                     for(let e of enms){
