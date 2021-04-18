@@ -96,7 +96,7 @@ function draw() {
 
                     ref.on('value',function(snapshot){
                         values = (document.getElementById(names).value= snapshot.val().data)
-                    })
+                    });
                     console.log(values)
                     c = true;
                     start = false;
