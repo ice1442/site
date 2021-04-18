@@ -25,9 +25,9 @@ function swap(){
 let button = document.getElementById("button");
 
 button.addEventListener("click", function(){
-    names = document.getElementById("names").value;
+    name = document.getElementById("names").value;
 
-    if (names == "" ){
+    if (name == "" ){
         alert("please enter name");
     }
     swap()
@@ -85,7 +85,7 @@ function draw() {
             for(let e of enms){
                 if (distance(e) < 50){
                     var data = {
-                        name: names,
+                        name: name,
                         score: x,
                     }
                     var database = firebase.database();
