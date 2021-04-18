@@ -25,12 +25,12 @@ function swap(){
 let button = document.getElementById("button");
 
 button.addEventListener("click", function(){
-    swap()
     let name = document.getElementById("name").value;
 
     if (name == "" ){
         alert("please enter name");
     }
+    swap()
 })
 
 function preload(){
