@@ -84,11 +84,11 @@ function draw() {
 
             for(let e of enms){
                 if (distance(e) < 50){
-                    alert(" game over \n score : " + x + "\n press space to restart ");
                     var data = {
                         name: name,
                         score: x,
                     }
+                    alert(" game over \n score : " + x + "\n press space to restart ");
                     var database = firebase.database();
                     var ref = database.ref("records");
                     ref.push(data);
