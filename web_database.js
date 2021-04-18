@@ -61,10 +61,10 @@ function distance(x){
 function draw() {
     if (c == false){
         if(a >205){
-            b -= 1
+            b -= 1;
         }
         if(a <50){
-            b += 1
+            b += 1;
         }
         a += b;
         background(a,a,a);
@@ -80,7 +80,7 @@ function draw() {
                 x += e.scor();
             }
             block.move();
-            block.show()
+            block.show();
 
             for(let e of enms){
                 if (distance(e) < 50){
@@ -93,9 +93,9 @@ function draw() {
                     ref.push(data);
 
                     alert(" game over \n score : " + x + "\n press space to restart ");
-                    
+                    c = true;
                     start = false;
-                    x = 0
+                    x = 0;
                     for(let e of enms){
                         e.reset();
                     }
