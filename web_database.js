@@ -87,6 +87,7 @@ function draw() {
                     alert(" game over \n score : " + x + "\n press space to restart ");
                     var data = {
                         name: name,
+                        score: x,
                     }
                     var database = firebase.database();
                     var ref = database.ref("records");
