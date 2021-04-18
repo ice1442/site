@@ -97,7 +97,7 @@ function draw() {
                         record = snap.records;
                     });
                     alert(" game over \n score : " + x + "\n press space to restart ");
-                    console.log(snapshot.val());
+                    console.log(record);
                     c = true;
                     start = false;
                     x = 0;
