@@ -59,6 +59,7 @@ function distance(x){
 }
 
 function draw() {
+    
     if (c == false){
         if(a >205){
             b -= 1;
@@ -88,8 +89,7 @@ function draw() {
                         name: names,
                         score: x,
                     }
-                    var database = firebase.database();
-                    var ref = database.ref("records");
+                    var ref = firebase.database().ref('records/');
                     ref.push(data);
 
                     alert(" game over \n score : " + x + "\n press space to restart ");
