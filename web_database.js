@@ -25,9 +25,9 @@ function swap(){
 let button = document.getElementById("button");
 
 button.addEventListener("click", function(){
-    var names = document.getElementById("name").value;
+    var name = document.getElementById("name").value;
 
-    if (names == "" ){
+    if (name == "" ){
         alert("please enter name");
     }
     swap()
@@ -85,12 +85,13 @@ function draw() {
             for(let e of enms){
                 if (distance(e) < 50){
                     var data = {
-                        name: names,
+                        name: name,
                         score: x,
                     }
                     var database = firebase.database();
                     var ref = database.ref("records");
                     ref.push(data);
+
                     alert(" game over \n score : " + x + "\n press space to restart ");
                     
                     start = false;
