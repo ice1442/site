@@ -91,13 +91,7 @@ function draw() {
                     }
                     var ref = firebase.database().ref('records/');
                     ref.push(data);
-                    ref.on("value", function(snapshot) {
-                        console.log(snapshot.val());
-                        var snap = snapshot.val();
-                        record = snap.records;
-                    });
                     alert(" game over \n score : " + x + "\n press space to restart ");
-                    console.log(record);
                     c = true;
                     start = false;
                     x = 0;
