@@ -94,7 +94,7 @@ function draw() {
                     ref.on("value", function(snapshot) {
                         console.log(snapshot.val());
                         var snap = snapshot.val();
-                        records = snap.records;
+                        record = snap.records;
                     });
                     alert(" game over \n score : " + x + "\n press space to restart ");
                     console.log(snapshot.val());
