@@ -91,7 +91,7 @@ function draw() {
                     }
                     var ref = firebase.database().ref('records/');
                     ref.push(data);
-                    alert(" game over \n score : " + x + "\n press space to restart ");
+                    alert(" game over \n score : " + x + "\n press the start button to restart ");
                     c = true;
                     start = false;
                     x = 0;
