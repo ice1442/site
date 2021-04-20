@@ -10,9 +10,7 @@ let alist = [];
 let blist = [];
 let clist = [];
 let addstopper = false;
-let button1 = document.getElementById("button1");
-let mytable = document.getElementById("table");
-let headers = ['Name','Score'];
+
 
 var firebaseConfig = {
   apiKey: "AIzaSyAvxV4X5B7hIU83LnM1HBDzbR-f1KeZ3mI",
@@ -100,28 +98,6 @@ function getscorelistc(){
     return(sortc);
 }
 
-button1.addEventListener('click',function(){
-    let table = document.createElement('table');
-    let headerRow = document.createElement('tr');
-    headers.forEach(headertext => {
-        let header = document.createElement('th');
-        let textNode = document.createTextNode(headertext);
-        header.appendChild(textNode);
-        headerRow.appendChild(header);
-    });
-    table.appendChild(headerRow);
-    getscorelista.forEach(player =>{
-        let row = document.createElement('tr');
-        Object.values(player).forEach(text => {
-            let cell = document.createElement('td');
-            let textNode = document.createTextNode(text);
-            cell.appendChild(textNode);
-            row.appendChild(cell);
-        });
-        table.appendChild(row);
-    });
-    mytable.appendChild(table);
-});
 
 function preload(){
     robo = loadImage('pic/hello.png');
@@ -130,6 +106,9 @@ function preload(){
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight/2);
+    console.log(getscorelista());
+    console.log(getscorelistb());
+    console.log(getscorelistc());
     block = new Block();
     for (var i = 0;i < 3;i++){
       enms.push (new Enm(i+1));
@@ -182,6 +161,9 @@ function draw() {
                     }
                     var refpush = firebase.database().ref('records/'+ team);
                     refpush.push(data);
+                    console.log(getscorelista());
+                    console.log(getscorelistb());
+                    console.log(getscorelistc());
                     c = true;
                     start = false;
                     x = 0;
