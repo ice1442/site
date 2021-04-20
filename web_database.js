@@ -97,7 +97,6 @@ function draw() {
                        console.log(data.val().name);
                        console.log(data.val().score);
                     });
-                    console.log
                     c = true;
                     start = false;
                     x = 0;
