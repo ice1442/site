@@ -141,17 +141,17 @@ function draw() {
                     start = false;
                     x = 0;
                     sorta = alist.sort(function(a,b){
-                        return a.score -b.score;
+                        return a.score - b.score;
                     });
                     sortb = blist.sort(function(a,b){
-                        return a.score -b.score;
+                        return a.score - b.score;
                     });
                     sortc = clist.sort(function(a,b){
-                        return a.score -b.score;
+                        return a.score - b.score;
                     });
-                    console.log(sorta)
-                    console.log(sortb)
-                    console.log(sortc)
+                    console.log(sorta);
+                    console.log(sortb);
+                    console.log(sortc);
                     for(let e of enms){
                         e.reset();
                     }
