@@ -5,6 +5,7 @@ let block;
 let enms = [];
 let robo;
 let start = true;
+let team;
 
 var firebaseConfig = {
   apiKey: "AIzaSyAvxV4X5B7hIU83LnM1HBDzbR-f1KeZ3mI",
@@ -22,7 +23,20 @@ function swap(){
     c = false;
 }
 
+let team_a = document.getElementById("team_a");
+let team_b = document.getElementById("team_b");
+let team_c = document.getElementById("team_c");
 let button = document.getElementById("button");
+
+team_a.addEventListener("click", function(){
+    team = "team A"
+})
+team_b.addEventListener("click", function(){
+    team = "team B"
+})
+team_c.addEventListener("click", function(){
+    team = "team C"
+})
 
 button.addEventListener("click", function(){
     names = document.getElementById("names").value;
@@ -89,8 +103,10 @@ function draw() {
                         name: names,
                         score: x,
                     }
+                    var refpush = firebase.database().ref('records/'+ team);
                     var ref = firebase.database().ref('records/');
-                    ref.push(data);
+
+                    refpush.push(data);
                     alert(" game over \n score : " + x + "\n press the start button to restart ");
 
                     ref.orderByChild("score").on("child_added", function(data) {
