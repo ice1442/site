@@ -79,13 +79,13 @@ function getscorelist(){
     start = false;
     x = 0;
     sorta = alist.sort(function(a,b){
-        return a.score - b.score;
+        return b.score - a.score;
     });
     sortb = blist.sort(function(a,b){
-        return a.score - b.score;
+        return b.score - a.score;
     });
     sortc = clist.sort(function(a,b){
-        return a.score - b.score;
+        return b.score - a.score;
     });
     console.log(sorta);
     console.log(sortb);
