@@ -7,9 +7,9 @@ let robo;
 let start = true;
 let team = "";
 let mytable = document.querySelector('#table');
-let alist;
-let blist;
-let clist;
+let alist = [];
+let blist = [];
+let clist = [];
 
 
 var firebaseConfig = {
