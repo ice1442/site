@@ -109,14 +109,24 @@ function draw() {
                         score: x,
                     }
                     var refpush = firebase.database().ref('records/'+ team);
-                    var ref = firebase.database().ref('records/');
+                    var refa = firebase.database().ref('records/team A');
+                    var refb = firebase.database().ref('records/team B');
+                    var refc = firebase.database().ref('records/team C');
 
                     refpush.push(data);
                     alert(" game over \n score : " + x + "\n press the start button to restart ");
 
-                    ref.orderByChild("score").on("child_added", function(data) {
+                    refa.orderByChild("score").on("child_added", function(data) {
                        console.log(data.val().name);
                        console.log(data.val().score);
+                    });
+                    refb.orderByChild("score").on("child_added", function(data) {
+                        console.log(data.val().name);
+                        console.log(data.val().score);
+                     });
+                    refc.orderByChild("score").on("child_added", function(data) {
+                        console.log(data.val().name);
+                        console.log(data.val().score);
                     });
                     c = true;
                     start = false;
