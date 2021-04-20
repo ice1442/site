@@ -117,6 +117,7 @@ function preload(){
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight/2);
     block = new Block();
+    text(sorta);
     for (var i = 0;i < 3;i++){
       enms.push (new Enm(i+1));
     }
@@ -168,7 +169,6 @@ function draw() {
                     }
                     var refpush = firebase.database().ref('records/'+ team);
                     refpush.push(data);
-                    getscorelist();
                     text(sorta);
                     alert(" game over \n score : " + x + "\n press the start button to restart ");
                     c = true;
