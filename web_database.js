@@ -127,17 +127,14 @@ function draw() {
 
                     refa.orderByChild("score").on("child_added", function(data) {
                         helloa = [data.val().name,data.val().score]
-                        console.log(helloa);
                         alist.push(helloa);
                     });
                     refb.orderByChild("score").on("child_added", function(data) {
                         hellob = [data.val().name,data.val().score]
-                        console.log(hellob);
                         blist.push(hellob);
                      });
                     refc.orderByChild("score").on("child_added", function(data) {
                         helloc = [data.val().name,data.val().score]
-                        console.log(helloc);
                         clist.push(helloc);
                     });
                     c = true;
