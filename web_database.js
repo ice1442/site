@@ -136,12 +136,12 @@ function draw() {
                         console.log(helloc);
                         clist.concat(helloc);
                     });
-                    console.log(alist)
-                    console.log(blist)
-                    console.log(clist)
                     c = true;
                     start = false;
                     x = 0;
+                    console.log(alist)
+                    console.log(blist)
+                    console.log(clist)
                     for(let e of enms){
                         e.reset();
                     }
