@@ -6,6 +6,8 @@ let enms = [];
 let robo;
 let start = true;
 let team = "";
+let mytable = document.querySelector('#table')
+
 
 var firebaseConfig = {
   apiKey: "AIzaSyAvxV4X5B7hIU83LnM1HBDzbR-f1KeZ3mI",
@@ -117,16 +119,16 @@ function draw() {
                     alert(" game over \n score : " + x + "\n press the start button to restart ");
 
                     refa.orderByChild("score").on("child_added", function(data) {
-                       console.log(data.val().name);
-                       console.log(data.val().score);
+                        hello = [data.val().name,data.val().score]
+                        console.log(hello);
                     });
                     refb.orderByChild("score").on("child_added", function(data) {
-                        console.log(data.val().name);
-                        console.log(data.val().score);
+                        hello = [data.val().name,data.val().score]
+                        console.log(hello);
                      });
                     refc.orderByChild("score").on("child_added", function(data) {
-                        console.log(data.val().name);
-                        console.log(data.val().score);
+                         hello = [data.val().name,data.val().score]
+                        console.log(hello);
                     });
                     c = true;
                     start = false;
