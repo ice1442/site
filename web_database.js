@@ -10,8 +10,8 @@ let alist = [];
 let blist = [];
 let clist = [];
 let addstopper = false;
-let button1 = document.getElementById('button1')
-let mytable = document.getElementById('table');
+let button1 = document.getElementById("button1");
+let mytable = document.getElementById("table");
 let headers = ['Name','Score'];
 
 var firebaseConfig = {
