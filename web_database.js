@@ -92,6 +92,13 @@ function draw() {
                     var ref = firebase.database().ref('records/');
                     ref.push(data);
                     alert(" game over \n score : " + x + "\n press the start button to restart ");
+                    var playersRef = firebase.database().ref("players/");
+
+                    playersRef.orderByChild("score").on("child_added", function(data) {
+                       console.log(data.val().name);
+                       console.log(data.val().score);
+                    });
+                    console.log
                     c = true;
                     start = false;
                     x = 0;
