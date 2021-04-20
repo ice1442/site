@@ -40,7 +40,9 @@ team_c.addEventListener("click", function(){
 
 button.addEventListener("click", function(){
     names = document.getElementById("names").value;
-
+    if (team == ""){
+        alert("please pick a team")
+    }
     if (names == "" ){
         alert("please enter name");
     }
@@ -75,10 +77,6 @@ function distance(x){
 function draw() {
     
     if (c == false){
-        if (team == ""){
-            c = true
-            alert("please pick a team and name then start")
-        }
         if(a >205){
             b -= 1;
         }
