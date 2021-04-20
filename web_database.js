@@ -128,8 +128,6 @@ function preload(){
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight/2);
     mktable(getscorelista());
-    mktable(getscorelistb());
-    mktable(getscorelistc());
     block = new Block();
     for (var i = 0;i < 3;i++){
       enms.push (new Enm(i+1));
@@ -187,8 +185,6 @@ function draw() {
                     x = 0;
                     alert(" game over \n score : " + x + "\n press the start button to restart ");
                     mktable(getscorelista());
-                    mktable(getscorelistb());
-                    mktable(getscorelistc());
                     for(let e of enms){
                         e.reset();
                     }
