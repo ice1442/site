@@ -139,9 +139,9 @@ function draw() {
                     c = true;
                     start = false;
                     x = 0;
-                    console.log(alist)
-                    console.log(blist)
-                    console.log(clist)
+                    console.log(alist.sort)
+                    console.log(blist.sort)
+                    console.log(clist.sort)
                     for(let e of enms){
                         e.reset();
                     }
