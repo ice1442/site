@@ -112,7 +112,7 @@ function draw() {
 
             for(let e of enms){
                 if (distance(e) < 50){
-                    addstopper = true;
+                    addstopper = false;
                     var data = {
                         name: names,
                         score: x,
