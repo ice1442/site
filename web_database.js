@@ -11,7 +11,7 @@ let blist = [];
 let clist = [];
 let addstopper = false;
 let mytable = document.querySelector('#table');
-let headers = ['Name','Score']
+let headers = ['Name','Score'];
 
 var firebaseConfig = {
   apiKey: "AIzaSyAvxV4X5B7hIU83LnM1HBDzbR-f1KeZ3mI",
@@ -61,7 +61,7 @@ button.addEventListener("click", function(){
     
 });
 
-function mktable(a){
+function mktable(input){
     let table = document.createElement('table');
     let headerRow = document.createElement('tr');
     headers.forEach(headertext => {
@@ -71,7 +71,7 @@ function mktable(a){
         headerRow.appendChild(header);
     });
     table.appendChild(headerRow);
-    a.forEach(player =>{
+    input.forEach(player =>{
         let row = document.createElement('tr');
         Object.values(player).forEach(text => {
             let cell = document.createElement('td');
