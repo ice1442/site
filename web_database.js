@@ -126,15 +126,15 @@ function draw() {
                     alert(" game over \n score : " + x + "\n press the start button to restart ");
 
                     refa.orderByChild("score").on("child_added", function(data) {
-                        helloa = [data.val().name,data.val().score]
+                        helloa = {nema : data.val().name,score : data.val().score}
                         alist.push(helloa);
                     });
                     refb.orderByChild("score").on("child_added", function(data) {
-                        hellob = [data.val().name,data.val().score]
+                        hellob = {nema : data.val().name,score : data.val().score}
                         blist.push(hellob);
                      });
                     refc.orderByChild("score").on("child_added", function(data) {
-                        helloc = [data.val().name,data.val().score]
+                        helloc = {nema : data.val().name,score : data.val().score}
                         clist.push(helloc);
                     });
                     c = true;
