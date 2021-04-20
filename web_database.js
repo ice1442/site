@@ -6,11 +6,12 @@ let enms = [];
 let robo;
 let start = true;
 let team = "";
-let mytable = document.querySelector('#table');
 let alist = [];
 let blist = [];
 let clist = [];
 let addstopper = false;
+let mytable = document.querySelector('#table');
+let headers = ['Name','Score']
 
 var firebaseConfig = {
   apiKey: "AIzaSyAvxV4X5B7hIU83LnM1HBDzbR-f1KeZ3mI",
@@ -58,38 +59,65 @@ button.addEventListener("click", function(){
         }
     }
     
-})
-function getscorelist(){
+});
+
+function mktable(a){
+    let table = document.createElement('table');
+    let headerRow = document.createElement('tr');
+    headers.forEach(headertext => {
+        let header = document.createElement('th');
+        let textNode = document.createTextNode(headertext);
+        header.appendChild(textNode);
+        headerRow.appendChild(header);
+    });
+    table.appendChild(headerRow);
+    a.forEach(player =>{
+        let row = document.createElement('tr');
+        Object.values(player).forEach(text => {
+            let cell = document.createElement('td');
+            let textNode = document.createTextNode(text);
+            cell.appendChild(textNode);
+            row.appendChild(cell);
+        });
+        table.appendChild(row);
+    });
+    mytable.appendChild(table);
+}
+
+function getscorelista(){
     var refa = firebase.database().ref('records/team A');
-    var refb = firebase.database().ref('records/team B');
-    var refc = firebase.database().ref('records/team C');
     refa.orderByChild("score").on("child_added", function(data) {
         helloa = {name : data.val().name,score : data.val().score}
         alist.push(helloa);
     });
+    sorta = alist.sort(function(a,b){
+        return b.score - a.score;
+    });
+    return(sorta);
+}
+
+function getscorelistb(){
+    var refb = firebase.database().ref('records/team B');
     refb.orderByChild("score").on("child_added", function(data) {
         hellob = {name : data.val().name,score : data.val().score}
         blist.push(hellob);
-     });
-    refc.orderByChild("score").on("child_added", function(data) {
-        helloc = {name : data.val().name,score : data.val().score}
-        clist.push(helloc);
-    });
-    c = true;
-    start = false;
-    x = 0;
-    sorta = alist.sort(function(a,b){
-        return b.score - a.score;
     });
     sortb = blist.sort(function(a,b){
         return b.score - a.score;
     });
+    return(sortb);
+}
+
+function getscorelistc(){
+    var refc = firebase.database().ref('records/team C');
+    refc.orderByChild("score").on("child_added", function(data) {
+        helloc = {name : data.val().name,score : data.val().score}
+        clist.push(helloc);
+    });
     sortc = clist.sort(function(a,b){
         return b.score - a.score;
     });
-    console.log(sorta);
-    console.log(sortb);
-    console.log(sortc);
+    return(sortc);
 }
 
 function preload(){
@@ -99,7 +127,9 @@ function preload(){
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight/2);
-    getscorelist();
+    mktable(getscorelista());
+    mktable(getscorelistb());
+    mktable(getscorelistc());
     block = new Block();
     for (var i = 0;i < 3;i++){
       enms.push (new Enm(i+1));
@@ -152,6 +182,9 @@ function draw() {
                     }
                     var refpush = firebase.database().ref('records/'+ team);
                     refpush.push(data);
+                    c = true;
+                    start = false;
+                    x = 0;
                     alert(" game over \n score : " + x + "\n press the start button to restart ");
                     getscorelist();
                     for(let e of enms){
