@@ -59,6 +59,38 @@ button.addEventListener("click", function(){
     }
     
 })
+function getscorelist(){
+    var refa = firebase.database().ref('records/team A');
+    var refb = firebase.database().ref('records/team B');
+    var refc = firebase.database().ref('records/team C');
+    refa.orderByChild("score").on("child_added", function(data) {
+        helloa = {name : data.val().name,score : data.val().score}
+        alist.push(helloa);
+    });
+    refb.orderByChild("score").on("child_added", function(data) {
+        hellob = {name : data.val().name,score : data.val().score}
+        blist.push(hellob);
+     });
+    refc.orderByChild("score").on("child_added", function(data) {
+        helloc = {name : data.val().name,score : data.val().score}
+        clist.push(helloc);
+    });
+    c = true;
+    start = false;
+    x = 0;
+    sorta = alist.sort(function(a,b){
+        return a.score - b.score;
+    });
+    sortb = blist.sort(function(a,b){
+        return a.score - b.score;
+    });
+    sortc = clist.sort(function(a,b){
+        return a.score - b.score;
+    });
+    console.log(sorta);
+    console.log(sortb);
+    console.log(sortc);
+}
 
 function preload(){
     robo = loadImage('pic/hello.png');
@@ -67,6 +99,7 @@ function preload(){
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight/2);
+    getscorelist();
     block = new Block();
     for (var i = 0;i < 3;i++){
       enms.push (new Enm(i+1));
@@ -118,40 +151,9 @@ function draw() {
                         score: x,
                     }
                     var refpush = firebase.database().ref('records/'+ team);
-                    var refa = firebase.database().ref('records/team A');
-                    var refb = firebase.database().ref('records/team B');
-                    var refc = firebase.database().ref('records/team C');
-
                     refpush.push(data);
                     alert(" game over \n score : " + x + "\n press the start button to restart ");
-
-                    refa.orderByChild("score").on("child_added", function(data) {
-                        helloa = {name : data.val().name,score : data.val().score}
-                        alist.push(helloa);
-                    });
-                    refb.orderByChild("score").on("child_added", function(data) {
-                        hellob = {name : data.val().name,score : data.val().score}
-                        blist.push(hellob);
-                     });
-                    refc.orderByChild("score").on("child_added", function(data) {
-                        helloc = {name : data.val().name,score : data.val().score}
-                        clist.push(helloc);
-                    });
-                    c = true;
-                    start = false;
-                    x = 0;
-                    sorta = alist.sort(function(a,b){
-                        return a.score - b.score;
-                    });
-                    sortb = blist.sort(function(a,b){
-                        return a.score - b.score;
-                    });
-                    sortc = clist.sort(function(a,b){
-                        return a.score - b.score;
-                    });
-                    console.log(sorta);
-                    console.log(sortb);
-                    console.log(sortc);
+                    getscorelist();
                     for(let e of enms){
                         e.reset();
                     }
