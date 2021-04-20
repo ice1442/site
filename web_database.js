@@ -186,7 +186,9 @@ function draw() {
                     start = false;
                     x = 0;
                     alert(" game over \n score : " + x + "\n press the start button to restart ");
-                    getscorelist();
+                    mktable(getscorelista());
+                    mktable(getscorelistb());
+                    mktable(getscorelistc());
                     for(let e of enms){
                         e.reset();
                     }
