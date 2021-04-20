@@ -126,23 +126,29 @@ function draw() {
                     alert(" game over \n score : " + x + "\n press the start button to restart ");
 
                     refa.orderByChild("score").on("child_added", function(data) {
-                        helloa = {nema : data.val().name,score : data.val().score}
+                        helloa = {name : data.val().name,score : data.val().score}
                         alist.push(helloa);
                     });
                     refb.orderByChild("score").on("child_added", function(data) {
-                        hellob = {nema : data.val().name,score : data.val().score}
+                        hellob = {name : data.val().name,score : data.val().score}
                         blist.push(hellob);
                      });
                     refc.orderByChild("score").on("child_added", function(data) {
-                        helloc = {nema : data.val().name,score : data.val().score}
+                        helloc = {name : data.val().name,score : data.val().score}
                         clist.push(helloc);
                     });
                     c = true;
                     start = false;
                     x = 0;
-                    sorta = alist.sort();
-                    sortb = blist.sort();
-                    sortc = clist.sort();
+                    sorta = alist.sort(function(a,b){
+                        return a.score -b.score;
+                    });
+                    sortb = blist.sort(function(a,b){
+                        return a.score -b.score;
+                    });
+                    sortc = clist.sort(function(a,b){
+                        return a.score -b.score;
+                    });
                     console.log(sorta)
                     console.log(sortb)
                     console.log(sortc)
