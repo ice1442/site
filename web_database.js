@@ -61,14 +61,7 @@ button.addEventListener("click", function(){
     
 });
 
-var refa = firebase.database().ref('records/team A');
-refa.orderByChild("score").on("child_added", function(data) {
-    helloa = {name : data.val().name,score : data.val().score}
-    alist.push(helloa);
-});
-let sorta = alist.sort(function(a,b){
-    return b.score - a.score;
-});
+
 var refb = firebase.database().ref('records/team B');
 refb.orderByChild("score").on("child_added", function(data) {
     hellob = {name : data.val().name,score : data.val().score}
@@ -170,6 +163,9 @@ function draw() {
                     var refpush = firebase.database().ref('records/'+ team);
                     refpush.push(data);
                     text(sorta);
+                    console.log(sorta);
+                    console.log(sortb);
+                    console.log(sortc);
                     alert(" game over \n score : " + x + "\n press the start button to restart ");
                     c = true;
                     start = false;
