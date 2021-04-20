@@ -136,7 +136,9 @@ function draw() {
                         console.log(helloc);
                         clist.concat(helloc);
                     });
-                    console.log(alist,blist,clist)
+                    console.log(alist)
+                    console.log(blist)
+                    console.log(clist)
                     c = true;
                     start = false;
                     x = 0;
