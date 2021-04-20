@@ -100,7 +100,7 @@ function getscorelistc(){
     return(sortc);
 }
 
-btnGet.addEventListener('click',()=>{
+btnGet.addEventListener('click',function(){
     let table = document.createElement('table');
     let headerRow = document.createElement('tr');
     headers.forEach(headertext => {
