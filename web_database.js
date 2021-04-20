@@ -5,7 +5,7 @@ let block;
 let enms = [];
 let robo;
 let start = true;
-let team;
+let team = "";
 
 var firebaseConfig = {
   apiKey: "AIzaSyAvxV4X5B7hIU83LnM1HBDzbR-f1KeZ3mI",
