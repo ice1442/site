@@ -10,7 +10,8 @@ let alist = [];
 let blist = [];
 let clist = [];
 let addstopper = false;
-
+let mytable = document.getElementById("table");
+let headers = ['Name','Score'];
 
 var firebaseConfig = {
   apiKey: "AIzaSyAvxV4X5B7hIU83LnM1HBDzbR-f1KeZ3mI",
@@ -62,42 +63,55 @@ button.addEventListener("click", function(){
 
 
 
-function getscorelista(){
+function getscorelist(){
     var refa = firebase.database().ref('records/team A');
     refa.orderByChild("score").on("child_added", function(data) {
         helloa = {name : data.val().name,score : data.val().score}
         alist.push(helloa);
     });
-    sorta = alist.sort(function(a,b){
+    let sorta = alist.sort(function(a,b){
         return b.score - a.score;
     });
-    return(sorta);
-}
-
-function getscorelistb(){
     var refb = firebase.database().ref('records/team B');
     refb.orderByChild("score").on("child_added", function(data) {
         hellob = {name : data.val().name,score : data.val().score}
         blist.push(hellob);
     });
-    sortb = blist.sort(function(a,b){
+    let sortb = blist.sort(function(a,b){
         return b.score - a.score;
     });
-    return(sortb);
-}
-
-function getscorelistc(){
     var refc = firebase.database().ref('records/team C');
     refc.orderByChild("score").on("child_added", function(data) {
         helloc = {name : data.val().name,score : data.val().score}
         clist.push(helloc);
     });
-    sortc = clist.sort(function(a,b){
+    let sortc = clist.sort(function(a,b){
         return b.score - a.score;
     });
-    return(sortc);
 }
 
+function text(a){
+    let table = document.createElement('table');
+    let headerRow = document.createElement('tr');
+    headers.forEach(headertext => {
+        let header = document.createElement('th');
+        let textNode = document.createTextNode(headertext);
+        header.appendChild(textNode);
+        headerRow.appendChild(header);
+    });
+    table.appendChild(headerRow);
+    a.forEach(player =>{
+        let row = document.createElement('tr');
+        Object.values(player).forEach(text => {
+            let cell = document.createElement('td');
+            let textNode = document.createTextNode(text);
+            cell.appendChild(textNode);
+            row.appendChild(cell);
+        });
+        table.appendChild(row);
+    });
+    mytable.appendChild(table);
+}
 
 function preload(){
     robo = loadImage('pic/hello.png');
@@ -161,9 +175,8 @@ function draw() {
                     }
                     var refpush = firebase.database().ref('records/'+ team);
                     refpush.push(data);
-                    console.log(getscorelista());
-                    console.log(getscorelistb());
-                    console.log(getscorelistc());
+                    getscorelist();
+                    text(sorta);
                     alert(" game over \n score : " + x + "\n press the start button to restart ");
                     c = true;
                     start = false;
