@@ -6,7 +6,10 @@ let enms = [];
 let robo;
 let start = true;
 let team = "";
-let mytable = document.querySelector('#table')
+let mytable = document.querySelector('#table');
+let alist;
+let blist;
+let clist;
 
 
 var firebaseConfig = {
@@ -31,14 +34,14 @@ let team_c = document.getElementById("team_c");
 let button = document.getElementById("button");
 
 team_a.addEventListener("click", function(){
-    team = "team A"
-})
+    team = "team A";
+});
 team_b.addEventListener("click", function(){
-    team = "team B"
-})
+    team = "team B";
+});
 team_c.addEventListener("click", function(){
-    team = "team C"
-})
+    team = "team C";
+});
 
 button.addEventListener("click", function(){
     names = document.getElementById("names").value;
@@ -119,17 +122,21 @@ function draw() {
                     alert(" game over \n score : " + x + "\n press the start button to restart ");
 
                     refa.orderByChild("score").on("child_added", function(data) {
-                        hello = [data.val().name,data.val().score]
-                        console.log(hello);
+                        helloa = [data.val().name,data.val().score]
+                        console.log(helloa);
+                        alist.push(helloa);
                     });
                     refb.orderByChild("score").on("child_added", function(data) {
-                        hello = [data.val().name,data.val().score]
-                        console.log(hello);
+                        hellob = [data.val().name,data.val().score]
+                        console.log(hellob);
+                        blist.push(hellob);
                      });
                     refc.orderByChild("score").on("child_added", function(data) {
-                         hello = [data.val().name,data.val().score]
-                        console.log(hello);
+                        helloc = [data.val().name,data.val().score]
+                        console.log(helloc);
+                        clist.push(helloc);
                     });
+                    console.log(alist,blist,clist)
                     c = true;
                     start = false;
                     x = 0;
