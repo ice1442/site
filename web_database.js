@@ -11,7 +11,7 @@ let blist = [];
 let clist = [];
 let addstopper = false;
 let btnGet = document.getElementById('button1')
-let mytable = document.getElementById('#table');
+let mytable = document.getElementById('table');
 let headers = ['Name','Score'];
 
 var firebaseConfig = {
