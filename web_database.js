@@ -46,7 +46,10 @@ button.addEventListener("click", function(){
     if (names == "" ){
         alert("please enter name");
     }
-    swap()
+    if (names != "" && team != ""){
+        swap()
+    }
+    
 })
 
 function preload(){
