@@ -10,6 +10,7 @@ let alist = [];
 let blist = [];
 let clist = [];
 let addstopper = false;
+let btnGet = document.querySelector('button1')
 let mytable = document.querySelector('#table');
 let headers = ['Name','Score'];
 
@@ -61,28 +62,7 @@ button.addEventListener("click", function(){
     
 });
 
-function mktable(input){
-    let table = document.createElement('table');
-    let headerRow = document.createElement('tr');
-    headers.forEach(headertext => {
-        let header = document.createElement('th');
-        let textNode = document.createTextNode(headertext);
-        header.appendChild(textNode);
-        headerRow.appendChild(header);
-    });
-    table.appendChild(headerRow);
-    input.forEach(player =>{
-        let row = document.createElement('tr');
-        Object.values(player).forEach(text => {
-            let cell = document.createElement('td');
-            let textNode = document.createTextNode(text);
-            cell.appendChild(textNode);
-            row.appendChild(cell);
-        });
-        table.appendChild(row);
-    });
-    mytable.appendChild(table);
-}
+
 
 function getscorelista(){
     var refa = firebase.database().ref('records/team A');
@@ -119,6 +99,29 @@ function getscorelistc(){
     });
     return(sortc);
 }
+
+btnGet.addEventListener('click',()=>{
+    let table = document.createElement('table');
+    let headerRow = document.createElement('tr');
+    headers.forEach(headertext => {
+        let header = document.createElement('th');
+        let textNode = document.createTextNode(headertext);
+        header.appendChild(textNode);
+        headerRow.appendChild(header);
+    });
+    table.appendChild(headerRow);
+    getscorelista.forEach(player =>{
+        let row = document.createElement('tr');
+        Object.values(player).forEach(text => {
+            let cell = document.createElement('td');
+            let textNode = document.createTextNode(text);
+            cell.appendChild(textNode);
+            row.appendChild(cell);
+        });
+        table.appendChild(row);
+    });
+    mytable.appendChild(table);
+});
 
 function preload(){
     robo = loadImage('pic/hello.png');
