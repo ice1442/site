@@ -75,6 +75,10 @@ function distance(x){
 function draw() {
     
     if (c == false){
+        if (team == ""){
+            c = true
+            alert("please pick a team and name then start")
+        }
         if(a >205){
             b -= 1;
         }
