@@ -10,7 +10,7 @@ let alist = [];
 let blist = [];
 let clist = [];
 let addstopper = false;
-let butn = document.getElementById('button1')
+let button1 = document.getElementById('button1')
 let mytable = document.getElementById('table');
 let headers = ['Name','Score'];
 
@@ -100,7 +100,7 @@ function getscorelistc(){
     return(sortc);
 }
 
-butn.addEventListener('click',function(){
+button1.addEventListener('click',function(){
     let table = document.createElement('table');
     let headerRow = document.createElement('tr');
     headers.forEach(headertext => {
