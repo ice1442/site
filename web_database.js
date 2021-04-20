@@ -10,7 +10,7 @@ let mytable = document.querySelector('#table');
 let alist = [];
 let blist = [];
 let clist = [];
-
+let addstopper = false;
 
 var firebaseConfig = {
   apiKey: "AIzaSyAvxV4X5B7hIU83LnM1HBDzbR-f1KeZ3mI",
@@ -44,15 +44,18 @@ team_c.addEventListener("click", function(){
 });
 
 button.addEventListener("click", function(){
-    names = document.getElementById("names").value;
-    if (team == ""){
-        alert("please pick a team")
-    }
-    if (names == "" ){
-        alert("please enter name");
-    }
-    if (names != "" && team != ""){
-        swap()
+    if (addstopper == false){
+        addstopper = true
+        names = document.getElementById("names").value;
+        if (team == ""){
+            alert("please pick a team")
+        }
+        if (names == "" ){
+            alert("please enter name");
+        }
+        if (names != "" && team != ""){
+            swap()
+        }
     }
     
 })
@@ -109,6 +112,7 @@ function draw() {
 
             for(let e of enms){
                 if (distance(e) < 50){
+                    addstopper = true;
                     var data = {
                         name: names,
                         score: x,
