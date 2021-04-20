@@ -61,34 +61,30 @@ button.addEventListener("click", function(){
     
 });
 
-
-
-function getscorelist(){
-    var refa = firebase.database().ref('records/team A');
-    refa.orderByChild("score").on("child_added", function(data) {
-        helloa = {name : data.val().name,score : data.val().score}
-        alist.push(helloa);
-    });
-    let sorta = alist.sort(function(a,b){
-        return b.score - a.score;
-    });
-    var refb = firebase.database().ref('records/team B');
-    refb.orderByChild("score").on("child_added", function(data) {
-        hellob = {name : data.val().name,score : data.val().score}
-        blist.push(hellob);
-    });
-    let sortb = blist.sort(function(a,b){
-        return b.score - a.score;
-    });
-    var refc = firebase.database().ref('records/team C');
-    refc.orderByChild("score").on("child_added", function(data) {
-        helloc = {name : data.val().name,score : data.val().score}
-        clist.push(helloc);
-    });
-    let sortc = clist.sort(function(a,b){
-        return b.score - a.score;
-    });
-}
+var refa = firebase.database().ref('records/team A');
+refa.orderByChild("score").on("child_added", function(data) {
+    helloa = {name : data.val().name,score : data.val().score}
+    alist.push(helloa);
+});
+let sorta = alist.sort(function(a,b){
+    return b.score - a.score;
+});
+var refb = firebase.database().ref('records/team B');
+refb.orderByChild("score").on("child_added", function(data) {
+    hellob = {name : data.val().name,score : data.val().score}
+    blist.push(hellob);
+});
+let sortb = blist.sort(function(a,b){
+    return b.score - a.score;
+});
+var refc = firebase.database().ref('records/team C');
+refc.orderByChild("score").on("child_added", function(data) {
+    helloc = {name : data.val().name,score : data.val().score}
+    clist.push(helloc);
+});
+let sortc = clist.sort(function(a,b){
+    return b.score - a.score;
+});
 
 function text(a){
     let table = document.createElement('table');
