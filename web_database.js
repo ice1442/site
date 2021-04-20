@@ -164,10 +164,10 @@ function draw() {
                     console.log(getscorelista());
                     console.log(getscorelistb());
                     console.log(getscorelistc());
+                    alert(" game over \n score : " + x + "\n press the start button to restart ");
                     c = true;
                     start = false;
                     x = 0;
-                    alert(" game over \n score : " + x + "\n press the start button to restart ");
                     for(let e of enms){
                         e.reset();
                     }
