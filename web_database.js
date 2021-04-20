@@ -139,9 +139,12 @@ function draw() {
                     c = true;
                     start = false;
                     x = 0;
-                    console.log(alist.sort)
-                    console.log(blist.sort)
-                    console.log(clist.sort)
+                    sorta = alist.sort();
+                    sortb = blist.sort();
+                    sortc = clist.sort();
+                    console.log(sorta)
+                    console.log(sortb)
+                    console.log(sortc)
                     for(let e of enms){
                         e.reset();
                     }
