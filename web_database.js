@@ -162,12 +162,11 @@ function preload(){
     robo = loadImage('pic/hello.png');
     enme = loadImage('pic/enme.png');
 }
-
+texta();
+textb();
+textc();
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight/2);
-    texta();
-    textb();
-    textc();
     block = new Block();
     for (var i = 0;i < 3;i++){
       enms.push (new Enm(i+1));
