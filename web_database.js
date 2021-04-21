@@ -162,7 +162,9 @@ function preload(){
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight/2);
     block = new Block();
-    text(sorta);
+    texta();
+    textb();
+    textc();
     for (var i = 0;i < 3;i++){
       enms.push (new Enm(i+1));
     }
