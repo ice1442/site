@@ -219,9 +219,6 @@ function draw() {
                     }
                     var refpush = firebase.database().ref('records/'+ team);
                     refpush.push(data);
-                    texta();
-                    textb();
-                    textc();
                     console.log(sorta);
                     console.log(sortb);
                     console.log(sortc);
