@@ -72,7 +72,6 @@ refa.orderByChild("score").on("child_added", function(data) {
 let sorta = alist.sort(function(a,b){
     return a.score - b.score;
 });
-sorta = sorta.reverse()
 var refb = firebase.database().ref('records/team B');
 refb.orderByChild("score").on("child_added", function(data) {
     hellob = {name : data.val().name,score : data.val().score}
@@ -81,7 +80,6 @@ refb.orderByChild("score").on("child_added", function(data) {
 let sortb = blist.sort(function(a,b){
     return a.score - b.score;
 });
-sortb = sortb.reverse()
 var refc = firebase.database().ref('records/team C');
 refc.orderByChild("score").on("child_added", function(data) {
     helloc = {name : data.val().name,score : data.val().score}
@@ -90,7 +88,6 @@ refc.orderByChild("score").on("child_added", function(data) {
 let sortc = clist.sort(function(a,b){
     return a.score - b.score;
 });
-sortc = sortc.reverse()
 
 function text_a(){
     let tablea = document.createElement('tablea');
@@ -102,7 +99,7 @@ function text_a(){
         headerRow.appendChild(headera);
     });
     tablea.appendChild(headerRow);
-    sorta.forEach(player =>{
+    sorta.reverse().forEach(player =>{
         let row = document.createElement('tr');
         console.log("hello")
         Object.values(player).forEach(text => {
@@ -125,7 +122,7 @@ function text_b(){
         headerRow.appendChild(headerb);
     });
     tableb.appendChild(headerRow);
-    sortb.forEach(player =>{
+    sortb.reverse().forEach(player =>{
         let row = document.createElement('tr');
         console.log("hello")
         Object.values(player).forEach(text => {
@@ -148,7 +145,7 @@ function text_c(){
         headerRow.appendChild(headerc);
     });
     tablec.appendChild(headerRow);
-    sortc.forEach(player =>{
+    sortc.reverse().forEach(player =>{
         let row = document.createElement('tr');
         console.log("hello")
         Object.values(player).forEach(text => {
