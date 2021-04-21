@@ -64,7 +64,7 @@ button.addEventListener("click", function(){
     }
 });
 
-var refa = firebase.database().ref('records/team B');
+var refa = firebase.database().ref('records/team A');
 refa.orderByChild("score").on("child_added", function(data) {
     helloa = {name : data.val().name,score : data.val().score}
     alist.push(helloa);
