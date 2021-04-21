@@ -162,9 +162,7 @@ function preload(){
     robo = loadImage('pic/hello.png');
     enme = loadImage('pic/enme.png');
 }
-texta();
-textb();
-textc();
+
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight/2);
     block = new Block();
@@ -184,7 +182,9 @@ function distance(x){
     ypos = x.pos()[1]-block.pos()[1];
     return (Math.sqrt(Math.pow(xpos,2)+Math.pow(ypos,2),2))
 }
-
+texta();
+textb();
+textc();
 function draw() {
     
     if (c == false){
