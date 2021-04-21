@@ -182,9 +182,7 @@ function distance(x){
     ypos = x.pos()[1]-block.pos()[1];
     return (Math.sqrt(Math.pow(xpos,2)+Math.pow(ypos,2),2))
 }
-texta();
-textb();
-textc();
+
 function draw() {
     
     if (c == false){
@@ -219,6 +217,9 @@ function draw() {
                     }
                     var refpush = firebase.database().ref('records/'+ team);
                     refpush.push(data);
+                    texta();
+                    textb();
+                    textc();
                     console.log(sorta);
                     console.log(sortb);
                     console.log(sortc);
