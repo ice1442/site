@@ -85,7 +85,7 @@ let sortc = clist.sort(function(a,b){
     return b.score - a.score;
 });
 
-function text(a){
+function texta(){
     let table = document.createElement('table');
     let headerRow = document.createElement('tr');
     headers.forEach(headertext => {
@@ -95,7 +95,7 @@ function text(a){
         headerRow.appendChild(header);
     });
     table.appendChild(headerRow);
-    a.forEach(player =>{
+    sorta.forEach(player =>{
         let row = document.createElement('tr');
         console.log("hello")
         Object.values(player).forEach(text => {
@@ -108,7 +108,52 @@ function text(a){
     });
     mytable.appendChild(table);
 }
-
+function textb(){
+    let table = document.createElement('table');
+    let headerRow = document.createElement('tr');
+    headers.forEach(headertext => {
+        let header = document.createElement('th');
+        let textNode = document.createTextNode(headertext);
+        header.appendChild(textNode);
+        headerRow.appendChild(header);
+    });
+    table.appendChild(headerRow);
+    sortb.forEach(player =>{
+        let row = document.createElement('tr');
+        console.log("hello")
+        Object.values(player).forEach(text => {
+            let cell = document.createElement('td');
+            let textNode = document.createTextNode(text);
+            cell.appendChild(textNode);
+            row.appendChild(cell);
+        });
+        table.appendChild(row);
+    });
+    mytable.appendChild(table);
+}
+function textc(){
+    let table = document.createElement('table');
+    let headerRow = document.createElement('tr');
+    headers.forEach(headertext => {
+        let header = document.createElement('th');
+        let textNode = document.createTextNode(headertext);
+        header.appendChild(textNode);
+        headerRow.appendChild(header);
+    });
+    table.appendChild(headerRow);
+    sortc.forEach(player =>{
+        let row = document.createElement('tr');
+        console.log("hello")
+        Object.values(player).forEach(text => {
+            let cell = document.createElement('td');
+            let textNode = document.createTextNode(text);
+            cell.appendChild(textNode);
+            row.appendChild(cell);
+        });
+        table.appendChild(row);
+    });
+    mytable.appendChild(table);
+}
 function preload(){
     robo = loadImage('pic/hello.png');
     enme = loadImage('pic/enme.png');
@@ -169,7 +214,9 @@ function draw() {
                     }
                     var refpush = firebase.database().ref('records/'+ team);
                     refpush.push(data);
-                    text(sorta);
+                    texta();
+                    textb();
+                    textc();
                     console.log(sorta);
                     console.log(sortb);
                     console.log(sortc);
