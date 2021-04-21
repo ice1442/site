@@ -58,7 +58,6 @@ button.addEventListener("click", function(){
             swap()
         }
     }
-    
 });
 
 var refa = firebase.database().ref('records/team B');
@@ -98,6 +97,7 @@ function text(a){
     table.appendChild(headerRow);
     a.forEach(player =>{
         let row = document.createElement('tr');
+        console.log("hello")
         Object.values(player).forEach(text => {
             let cell = document.createElement('td');
             let textNode = document.createTextNode(text);
