@@ -92,7 +92,7 @@ let sortc = clist.sort(function(a,b){
 function texta(){
     let table = document.createElement('tablea');
     let headerRow = document.createElement('tr');
-    headers.forEach(headertext => {
+    headersa.forEach(headertext => {
         let headera = document.createElement('th');
         let textNode = document.createTextNode(headertext);
         headera.appendChild(textNode);
@@ -115,7 +115,7 @@ function texta(){
 function textb(){
     let table = document.createElement('tableb');
     let headerRow = document.createElement('tr');
-    headers.forEach(headertext => {
+    headersb.forEach(headertext => {
         let headerb = document.createElement('th');
         let textNode = document.createTextNode(headertext);
         headerb.appendChild(textNode);
@@ -138,7 +138,7 @@ function textb(){
 function textc(){
     let table = document.createElement('tablec');
     let headerRow = document.createElement('tr');
-    headers.forEach(headertext => {
+    headersc.forEach(headertext => {
         let headerc = document.createElement('th');
         let textNode = document.createTextNode(headertext);
         headerc.appendChild(textNode);
