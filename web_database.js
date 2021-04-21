@@ -91,73 +91,74 @@ let sortc = clist.sort(function(a,b){
 
 function text_a(){
     let tablea = document.createElement('tablea');
-    let headerRow = document.createElement('tr');
-    headersa.forEach(headertext => {
+    let headerRowa = document.createElement('tr');
+    headersa.forEach(headertexta => {
         let headera = document.createElement('th');
-        let textNode = document.createTextNode(headertext);
-        headera.appendChild(textNode);
-        headerRow.appendChild(headera);
+        let textNodea = document.createTextNode(headertexta);
+        headera.appendChild(textNodae);
+        headerRowa.appendChild(headera);
     });
-    tablea.appendChild(headerRow);
-    sorta.forEach(player =>{
-        let row = document.createElement('tr');
+    tablea.appendChild(headerRowa);
+    sorta.forEach(playera =>{
+        let rowa = document.createElement('tr');
         console.log("hello")
-        Object.values(player).forEach(text => {
-            let cell = document.createElement('td');
-            let textNode = document.createTextNode(text);
-            cell.appendChild(textNode);
-            row.appendChild(cell);
+        Object.values(playera).forEach(texta => {
+            let cella = document.createElement('td');
+            let textNodea = document.createTextNode(texta);
+            cella.appendChild(textNodea);
+            rowa.appendChild(cella);
         });
-        tablea.appendChild(row);
+        tablea.appendChild(rowa);
     });
     mytablea.appendChild(tablea);
 }
 function text_b(){
     let tableb = document.createElement('tableb');
-    let headerRow = document.createElement('tr');
-    headersb.forEach(headertext => {
+    let headerRowb = document.createElement('tr');
+    headersb.forEach(headertextb => {
         let headerb = document.createElement('th');
-        let textNode = document.createTextNode(headertext);
-        headerb.appendChild(textNode);
-        headerRow.appendChild(headerb);
+        let textNodeb = document.createTextNode(headertextb);
+        headerb.appendChild(textNodeb);
+        headerRowb.appendChild(headerb);
     });
-    tableb.appendChild(headerRow);
-    sortb.forEach(player =>{
-        let row = document.createElement('tr');
+    tableb.appendChild(headerRowb);
+    sortb.forEach(playerb =>{
+        let rowb = document.createElement('tr');
         console.log("hello")
-        Object.values(player).forEach(text => {
-            let cell = document.createElement('td');
-            let textNode = document.createTextNode(text);
-            cell.appendChild(textNode);
-            row.appendChild(cell);
+        Object.values(playerb).forEach(textb => {
+            let cellb = document.createElement('td');
+            let textNodeb = document.createTextNode(textb);
+            cellb.appendChild(textNodeb);
+            rowb.appendChild(cellb);
         });
-        tableb.appendChild(row);
+        tableb.appendChild(rowb);
     });
     mytableb.appendChild(tableb);
 }
 function text_c(){
     let tablec = document.createElement('tablec');
-    let headerRow = document.createElement('tr');
-    headersc.forEach(headertext => {
+    let headerRowc = document.createElement('tr');
+    headersc.forEach(headertextc => {
         let headerc = document.createElement('th');
-        let textNode = document.createTextNode(headertext);
-        headerc.appendChild(textNode);
-        headerRow.appendChild(headerc);
+        let textNodec = document.createTextNode(headertextc);
+        headerc.appendChild(textNodec);
+        headerRowc.appendChild(headerc);
     });
-    tablec.appendChild(headerRow);
-    sortc.forEach(player =>{
-        let row = document.createElement('tr');
+    tablec.appendChild(headerRowc);
+    sortc.forEach(playerc =>{
+        let rowc = document.createElement('tr');
         console.log("hello")
-        Object.values(player).forEach(text => {
-            let cell = document.createElement('td');
-            let textNode = document.createTextNode(text);
-            cell.appendChild(textNode);
-            row.appendChild(cell);
+        Object.values(playerc).forEach(textc => {
+            let cellc = document.createElement('td');
+            let textNodec = document.createTextNode(textc);
+            cellc.appendChild(textNodec);
+            rowc.appendChild(cellc);
         });
-        tablec.appendChild(row);
+        tablec.appendChild(rowc);
     });
     mytablec.appendChild(tablec);
 }
+
 function preload(){
     robo = loadImage('pic/hello.png');
     enme = loadImage('pic/enme.png');
