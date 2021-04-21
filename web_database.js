@@ -216,13 +216,13 @@ function draw() {
                         score: x,
                     }
                     var refpush = firebase.database().ref('records/'+ team);
-                    refpush.push(data);
                     text_a();
                     text_b();
                     text_c();
                     console.log(sorta);
                     console.log(sortb);
                     console.log(sortc);
+                    refpush.push(data);
                     alert(" game over \n score : " + x + "\n press the start button to restart ");
                     c = true;
                     start = false;
