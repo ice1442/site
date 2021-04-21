@@ -65,29 +65,32 @@ button.addEventListener("click", function(){
 });
 
 var refa = firebase.database().ref('records/team A');
-refa.orderByValue("score").on("child_added", function(data) {
+refa.orderByChild("score").on("child_added", function(data) {
     helloa = {name : data.val().name,score : data.val().score}
     alist.push(helloa);
 });
 let sorta = alist.sort(function(a,b){
-    return b.score - a.score;
+    return a.score - b.score;
 });
+sorta = sorta.reverse()
 var refb = firebase.database().ref('records/team B');
-refb.orderByValue("score").on("child_added", function(data) {
+refb.orderByChild("score").on("child_added", function(data) {
     hellob = {name : data.val().name,score : data.val().score}
     blist.push(hellob);
 });
 let sortb = blist.sort(function(a,b){
-    return b.score - a.score;
+    return a.score - b.score;
 });
+sortb = sortb.reverse()
 var refc = firebase.database().ref('records/team C');
-refc.orderByValue("score").on("child_added", function(data) {
+refc.orderByChild("score").on("child_added", function(data) {
     helloc = {name : data.val().name,score : data.val().score}
     clist.push(helloc);
 });
 let sortc = clist.sort(function(a,b){
-    return b.score - a.score;
+    return a.score - b.score;
 });
+sortc = sortc.reverse()
 
 function text_a(){
     let tablea = document.createElement('tablea');
