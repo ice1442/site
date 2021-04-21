@@ -10,8 +10,12 @@ let alist = [];
 let blist = [];
 let clist = [];
 let addstopper = false;
-let mytable = document.getElementById("table");
-let headers = ['Name','Score'];
+let mytable = document.getElementById("tablea");
+let mytable = document.getElementById("tableb");
+let mytable = document.getElementById("tablec");
+let headersa = ['Name','Score','A'];
+let headersb = ['Name','Score','B'];
+let headersc = ['Name','Score','C'];
 
 var firebaseConfig = {
   apiKey: "AIzaSyAvxV4X5B7hIU83LnM1HBDzbR-f1KeZ3mI",
@@ -86,13 +90,13 @@ let sortc = clist.sort(function(a,b){
 });
 
 function texta(){
-    let table = document.createElement('table');
+    let table = document.createElement('tablea');
     let headerRow = document.createElement('tr');
     headers.forEach(headertext => {
-        let header = document.createElement('th');
+        let headera = document.createElement('th');
         let textNode = document.createTextNode(headertext);
-        header.appendChild(textNode);
-        headerRow.appendChild(header);
+        headera.appendChild(textNode);
+        headerRow.appendChild(headera);
     });
     table.appendChild(headerRow);
     sorta.forEach(player =>{
@@ -109,13 +113,13 @@ function texta(){
     mytable.appendChild(table);
 }
 function textb(){
-    let table = document.createElement('table');
+    let table = document.createElement('tableb');
     let headerRow = document.createElement('tr');
     headers.forEach(headertext => {
-        let header = document.createElement('th');
+        let headerb = document.createElement('th');
         let textNode = document.createTextNode(headertext);
-        header.appendChild(textNode);
-        headerRow.appendChild(header);
+        headerb.appendChild(textNode);
+        headerRow.appendChild(headerb);
     });
     table.appendChild(headerRow);
     sortb.forEach(player =>{
@@ -132,13 +136,13 @@ function textb(){
     mytable.appendChild(table);
 }
 function textc(){
-    let table = document.createElement('table');
+    let table = document.createElement('tablec');
     let headerRow = document.createElement('tr');
     headers.forEach(headertext => {
-        let header = document.createElement('th');
+        let headerc = document.createElement('th');
         let textNode = document.createTextNode(headertext);
-        header.appendChild(textNode);
-        headerRow.appendChild(header);
+        headerc.appendChild(textNode);
+        headerRow.appendChild(headerc);
     });
     table.appendChild(headerRow);
     sortc.forEach(player =>{
@@ -162,9 +166,6 @@ function preload(){
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight/2);
     block = new Block();
-    texta();
-    textb();
-    textc();
     for (var i = 0;i < 3;i++){
       enms.push (new Enm(i+1));
     }
