@@ -70,6 +70,7 @@ refa.orderByChild("score").on("child_added", function(data) {
     alist.push(helloa);
 });
 let sorta = alist.sort(function(a,b){
+    console.log(sorta);
     return b.score - a.score;
 });
 var refb = firebase.database().ref('records/team B');
