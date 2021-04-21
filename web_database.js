@@ -70,7 +70,7 @@ refa.orderByChild("score").on("child_added", function(data) {
     alist.push(helloa);
 });
 let sorta = alist.sort(function(a,b){
-    return a.score - b.score;
+    return b.score - a.score;
 });
 var refb = firebase.database().ref('records/team B');
 refb.orderByChild("score").on("child_added", function(data) {
@@ -78,7 +78,7 @@ refb.orderByChild("score").on("child_added", function(data) {
     blist.push(hellob);
 });
 let sortb = blist.sort(function(a,b){
-    return a.score - b.score;
+    return b.score - a.score;
 });
 var refc = firebase.database().ref('records/team C');
 refc.orderByChild("score").on("child_added", function(data) {
@@ -86,7 +86,7 @@ refc.orderByChild("score").on("child_added", function(data) {
     clist.push(helloc);
 });
 let sortc = clist.sort(function(a,b){
-    return a.score - b.score;
+    return b.score - a.score;
 });
 
 function texta(){
