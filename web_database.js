@@ -69,8 +69,8 @@ refa.orderByChild("score").on("child_added", function(data) {
     helloa = {name : data.val().name,score : data.val().score}
     alist.push(helloa);
 });
+console.log(alist);
 let sorta = alist.sort(function(a,b){
-    console.log(b.score - a.score);
     return b.score - a.score;
 });
 var refb = firebase.database().ref('records/team B');
