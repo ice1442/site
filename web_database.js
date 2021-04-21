@@ -10,9 +10,9 @@ let alist = [];
 let blist = [];
 let clist = [];
 let addstopper = false;
-let mytable = document.getElementById("tablea");
-let mytable = document.getElementById("tableb");
-let mytable = document.getElementById("tablec");
+let mytablea = document.getElementById("tablea");
+let mytableb = document.getElementById("tableb");
+let mytablec = document.getElementById("tablec");
 let headersa = ['Name','Score','A'];
 let headersb = ['Name','Score','B'];
 let headersc = ['Name','Score','C'];
@@ -110,7 +110,7 @@ function texta(){
         });
         table.appendChild(row);
     });
-    mytable.appendChild(table);
+    mytablea.appendChild(table);
 }
 function textb(){
     let table = document.createElement('tableb');
@@ -133,7 +133,7 @@ function textb(){
         });
         table.appendChild(row);
     });
-    mytable.appendChild(table);
+    mytableb.appendChild(table);
 }
 function textc(){
     let table = document.createElement('tablec');
@@ -156,7 +156,7 @@ function textc(){
         });
         table.appendChild(row);
     });
-    mytable.appendChild(table);
+    mytablec.appendChild(table);
 }
 function preload(){
     robo = loadImage('pic/hello.png');
