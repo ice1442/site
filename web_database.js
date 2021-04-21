@@ -65,16 +65,15 @@ button.addEventListener("click", function(){
 });
 
 var refa = firebase.database().ref('records/team A');
-refa.orderByChild("score").on("child_added", function(data) {
+refa.orderByValue("score").on("child_added", function(data) {
     helloa = {name : data.val().name,score : data.val().score}
     alist.push(helloa);
 });
-console.log(alist);
 let sorta = alist.sort(function(a,b){
     return b.score - a.score;
 });
 var refb = firebase.database().ref('records/team B');
-refb.orderByChild("score").on("child_added", function(data) {
+refb.orderByValue("score").on("child_added", function(data) {
     hellob = {name : data.val().name,score : data.val().score}
     blist.push(hellob);
 });
@@ -82,7 +81,7 @@ let sortb = blist.sort(function(a,b){
     return b.score - a.score;
 });
 var refc = firebase.database().ref('records/team C');
-refc.orderByChild("score").on("child_added", function(data) {
+refc.orderByValue("score").on("child_added", function(data) {
     helloc = {name : data.val().name,score : data.val().score}
     clist.push(helloc);
 });
